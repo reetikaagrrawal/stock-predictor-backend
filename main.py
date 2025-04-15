@@ -8,6 +8,9 @@ import joblib
 
 app = FastAPI()
 
+# Get port from environment variable (for Render)
+port = int(os.getenv("PORT", 8000))
+
 # Allow frontend connection
 app.add_middleware(
     CORSMiddleware,
